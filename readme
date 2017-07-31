@@ -1,0 +1,62 @@
+jreplace
+
+
+Replace the keywords in a word .docx template by the content
+of the columns with the same names in a specific row(s) of an excel sheet.
+
+syntax:  py jreplace xlsx docx rownumber1 rownumber2 ...
+
+The  keywords used in the word template must correspond exactly to columns
+in the first row of the excel sheet.
+
+The first  sheet in the excel document will be used.
+
+
+Installation
+
+The code has been tested in python 2.7, which is required. It also
+depends on the libraries sys (included by default), python-docx,
+and openpyxl. You may need to install lxml manually, required by python-docx,
+as I have found on my Windows7 laptop.
+
+1. copy the software to your computer
+   -- create a folder, e.g. in your desktop "C:\Users\(username)\Desktop\jreplace",
+   where (username) should be replaced by your username
+   and copy the files to it
+2. install python 2.7
+   -- just click on the attached python-2.7.12 exe (python-2.7.12.msi) file. There is an option to add python to your path
+   which you will need to switch on when installing.
+3. use pip to install lmxl  
+   -- open a command prompt terminal (use the start button and search for "cmd")
+   -- change directory to where jreplace and lxml-3.6.4.-cp27m-win32.whl
+      are, using the command "cd" followed by the directory location.
+      If you adopted the folder recommended in step 1 above this will be:
+      cd c:\Users\(username)\Desktop\jreplace
+   -- type: py -m pip install lxml-3.6.4.-cp27m-win32.whl
+4. install python-docx
+   -- make sure you are online
+   -- type: py -m pip install python-docx
+5. install openpyxl
+   -- make sure you are still online
+   -- type: py -m pip install openpyxl
+
+Test
+
+Open a windows command prompt terminal (see step 3 in the installation
+instructions above), change directories to where the software and example
+files are, and try generating documents with the attached test files
+
+CD C:\Users\(username)\Desktop\jreplace\
+py jreplace proyectos.xlsx  clausula.docx  4
+
+This should replace the keywords present in the template clausula
+with the content of the cells under the same header in the 4th row
+of the data  base proyectos.xlsx, creating anew document clausula_0004.docx
+
+Try generating multiple documents at once, for example
+
+py jreplace proyectos.xlsx clausula.docx 5 2 7 14
+
+
+Carlos Allende Prieto, October 2016
+
