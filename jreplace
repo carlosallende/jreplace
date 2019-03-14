@@ -109,7 +109,7 @@ def jreplace_file(sheet,template,rownum,tag):
     
     #find and replace
     #print("KEYWORDS:"),
-    for colnum in range(2,sheet.max_column+1):
+    for colnum in range(1,sheet.max_column+1):
         i=0
         keyword=unicode(sheet.cell(row=1, column=colnum).value)
         target=unicode(sheet.cell(row=rownum, column=colnum).value)

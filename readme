@@ -24,21 +24,22 @@ as I have found on my Windows7 laptop.
    where (username) should be replaced by your username
    and copy the files to it
 2. install python 2.7
-   -- just click on the attached python-2.7.12 exe (python-2.7.12.msi) file. There is an option to add python to your path
-   which you will need to switch on when installing.
+   -- Download to the installer (it maybe .exe or .msi) froma the internet and run it. (python-2.7.12.msi) 
+   --Add python to your path (Control panel/system/ Advanced options/ enviroment variables/Path/
+     Add path/ C:\Python27\
+     Add path/ C:\Python27\Scripts\
+     Copy the jreplace.py file to C:\Python27\Scripts\ (so now it will be in the path)        
+    
 3. use pip to install lmxl  
    -- open a command prompt terminal (use the start button and search for "cmd")
-   -- change directory to where jreplace and lxml-3.6.4.-cp27m-win32.whl
-      are, using the command "cd" followed by the directory location.
-      If you adopted the folder recommended in step 1 above this will be:
-      cd c:\Users\(username)\Desktop\jreplace
-   -- type: py -m pip install lxml-3.6.4.-cp27m-win32.whl
-4. install python-docx
+   -- type: pip install lxml
+   -- JeimyṀs note: it doesnt apper directly. Open C:\Python27\Scripts\pip2.7.exe and then type pip install lxml
+4. use pip to install python-docx
    -- make sure you are online
-   -- type: py -m pip install python-docx
-5. install openpyxl
+   -- type: pip install python-docx
+5. use pip to install openpyxl
    -- make sure you are still online
-   -- type: py -m pip install openpyxl
+   -- type: pip install openpyxl
 
 Test
 
@@ -47,7 +48,7 @@ instructions above), change directories to where the software and example
 files are, and try generating documents with the attached test files
 
 CD C:\Users\(username)\Desktop\jreplace\
-py jreplace proyectos.xlsx  clausula.docx  4
+jreplace.py proyectos.xlsx  clausula.docx  4
 
 This should replace the keywords present in the template clausula
 with the content of the cells under the same header in the 4th row
@@ -55,8 +56,10 @@ of the data  base proyectos.xlsx, creating anew document clausula_0004.docx
 
 Try generating multiple documents at once, for example
 
-py jreplace proyectos.xlsx clausula.docx 5 2 7 14
+jreplace.py proyectos.xlsx clausula.docx 5 2 7 14
 
 
 Carlos Allende Prieto, October 2016
+Carlos Allende Prieto, July 2018
+Jeimy Guarin Poveda, November 2018
 
