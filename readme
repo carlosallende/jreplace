@@ -14,26 +14,27 @@ The first  sheet in the excel document will be used.
 
 Installation
 
-The code has been tested in python 2.7, which is required. It also
+The code was originally written and tested under python 2.7, and more
+recently (October 2019) ported to python 3.  It also
 depends on the libraries sys (included by default), python-docx,
 and openpyxl. You may need to install lxml manually, required by python-docx,
-as I have found on my Windows7 laptop.
+as I have found on a Windows7 laptop.
 
 1. copy the software to your computer
    -- create a folder, e.g. in your desktop "C:\Users\(username)\Desktop\jreplace",
    where (username) should be replaced by your username
    and copy the files to it
-2. install python 2.7
-   -- Download to the installer (it maybe .exe or .msi) froma the internet and run it. (python-2.7.12.msi) 
+2. install python 3.x
+   -- Download to the installer (it maybe .exe or .msi) froma the internet and run it. (python-3*msi) 
    --Add python to your path (Control panel/system/ Advanced options/ enviroment variables/Path/
-     Add path/ C:\Python27\
-     Add path/ C:\Python27\Scripts\
-     Copy the jreplace.py file to C:\Python27\Scripts\ (so now it will be in the path)        
+     Add path/ C:\Python3x
+     Add path/ C:\Python3x\Scripts\
+     Copy the jreplace.py file to C:\Python3x\Scripts\ (so now it will be in the path)        
     
 3. use pip to install lmxl  
    -- open a command prompt terminal (use the start button and search for "cmd")
    -- type: pip install lxml
-   -- JeimyṀs note: it doesnt apper directly. Open C:\Python27\Scripts\pip2.7.exe and then type pip install lxml
+   -- JeimyṀs note: it doesnt apper directly. Open C:\Python3x\Scripts\pip3.x.exe and then type pip install lxml
 4. use pip to install python-docx
    -- make sure you are online
    -- type: pip install python-docx
@@ -62,4 +63,4 @@ jreplace.py proyectos.xlsx clausula.docx 5 2 7 14
 Carlos Allende Prieto, October 2016
 Carlos Allende Prieto, July 2018
 Jeimy Guarin Poveda, November 2018
-
+Carlos Allende Prieto, October 2019, ported to python3

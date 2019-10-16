@@ -111,8 +111,8 @@ def jreplace_file(sheet,template,rownum,tag):
     #print("KEYWORDS:"),
     for colnum in range(1,sheet.max_column+1):
         i=0
-        keyword=unicode(sheet.cell(row=1, column=colnum).value)
-        target=unicode(sheet.cell(row=rownum, column=colnum).value)
+        keyword=str(sheet.cell(row=1, column=colnum).value)
+        target=str(sheet.cell(row=rownum, column=colnum).value)
         if ((keyword == None) | (target == None)): continue
         #print((keyword+'-').strip()),
         #sys.stdout.write((keyword+'-').strip())
@@ -179,7 +179,7 @@ def jreplace_dir(sheet,template,rownum,tag):
     newdir=template+tag
     shutil.copytree(template,newdir)
     docfiles=getdocxs(newdir)
-    print docfiles
+    print(docfiles)
     for file in docfiles:
         jreplace_file(sheet,file,rownum,'')
     
