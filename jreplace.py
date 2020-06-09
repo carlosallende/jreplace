@@ -17,20 +17,10 @@ The docx template can be replaced by a directory tree with multiple docx
 documents, in which case the search/replace will apply to all the documents, 
 and a new directory tree will be created.
 
-INSTALL
-
-clone or download from https://github.com/carlosallende/jreplace
-install python 3.x
-pip install python-docx
-pip install openpyxl
-
-
-
 Carlos Allende Prieto, October 2016
 Carlos, December 2016, fixed it to work with keywords within tables and 
                        handle page breaks
 Carlos, December 2016, upgraded to work with dir trees containing templates
-Carlos, October 2018, updated to python3
 '''
 
 import sys
@@ -177,7 +167,13 @@ def getdocxs(dir):
     Gets all the docx files in a dir tree
     """
     files=[]
-    os.path.walk(dir,docker,files)
+    #os.path.walk(dir,docker,files)
+    for directory, dirnames, filenames in os.walk(dir):
+      for file in filenames:
+        fullname=dir+'/'+file
+        if (os.path.isfile(fullname) & (fullname[-4:]  == 'docx')): 
+          files.append(fullname)
+
     return files
 
 def jreplace_dir(sheet,template,rownum,tag):
@@ -189,7 +185,7 @@ def jreplace_dir(sheet,template,rownum,tag):
     newdir=template+tag
     shutil.copytree(template,newdir)
     docfiles=getdocxs(newdir)
-    print(docfiles)
+    print (docfiles)
     for file in docfiles:
         jreplace_file(sheet,file,rownum,'')
     
