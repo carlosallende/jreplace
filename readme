@@ -12,7 +12,7 @@ in the first row of the excel sheet.
 The first  sheet in the excel document will be used.
 
 
-Installation
+Installation on Windows (command line)
 
 The code has been tested in python 3.x, which is required. It also
 depends on the libraries sys (included by default), python-docx,
@@ -42,13 +42,53 @@ as I have found on my Windows7 laptop.
    -- make sure you are still online
    -- type: pip install openpyxl (in some cases this should be 'py -m pip install openpyxl')
 
+
+Installation on Ubuntu/Linux (includes WSL -- Windows Subsystem for Linux)
+
+1. download the software using git (install git with 'sudo apt install git'
+if git is not already available) and install in your home folder
+
+  -- change to your home folder typing: cd
+  -- install typing:  git clone https://github.com/carlosallende/jreplace
+
+2. usually python3 is preinstalled but you need to install install pip3
+  (if not, install python3 in the same way as described for pip3, prior
+   to installing pip3), and the auxiliary packages needed by jreplace
+
+  -- type: sudo apt update
+  -- type: sudo apt install python3-pip
+  -- type: sudo pip3 install lxml python-doc openpyxl
+
+3. make jreplace.py executable by the user and add the jreplace folder to your
+   path
+
+  -- type: chmod u+x ~/jreplace/jreplace.py
+  -- add to your ~/.basrc the following line:
+     export PATH=$PATH:~/jreplace
+  -- source your ~/.basrc typing: source ~/.bashrc
+
+4. test that you can use jreplace from anywhere 
+
+  -- type: jreplace.py
+
+  and the program should reply giving you usage hints (which arguments are
+  needed).
+
+
 Test
 
-Open a windows command prompt terminal (see step 3 in the installation
+Open a windows/linux command prompt terminal (see step 3 in the installation
 instructions above), change directories to where the software and example
 files are, and try generating documents with the attached test files
 
-CD C:\Users\(username)\Desktop\jreplace\
+-If you have followed the instructions for installing in the windows command line (MSDOS) you can change the path to the jreplace folder in your Desktop typing:
+   CD C:\Users\(username)\Desktop\jreplace\
+
+-If you have followed the instructions for installing in Ubuntu (linux) you can change the path to the jreplace folder in your home typing:
+   cd  
+   cd jreplace
+
+Now test the software typing:
 jreplace.py proyectos.xlsx  clausula.docx  4
 
 This should replace the keywords present in the template clausula
@@ -64,4 +104,5 @@ Carlos Allende Prieto, October 2016
 Carlos Allende Prieto, July 2018
 Jeimy Guarin Poveda, November 2018
 Carlos Allende Prieto, June 2020 -- updated to python3
+Carlos Allende Prieto, March 2023 -- added instructions for a linux install
 
