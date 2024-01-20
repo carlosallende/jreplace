@@ -33,14 +33,14 @@ as I have found on my Windows7 laptop.
     
 3. use pip to install lmxl  
    -- open a command prompt terminal (use the start button and search for "cmd")
-   -- type: pip install lxml (in some cases this should be 'py -m pip install lxml')
-   -- Jeimy's note: it doesnt apper directly. Open C:\Python27\Scripts\pip2.7.exe and then type pip install lxml
+   -- type: python3 -m pip install lxml (in some cases this should be 'py -m pip install lxml')
+   -- Jeimy's note: it doesnt appear directly. Open C:\Python27\Scripts\pip2.7.exe and then type pip install lxml
 4. use pip to install python-docx
    -- make sure you are online
-   -- type: pip install python-docx (in some cases this should be 'py -m pip install python-docx')
+   -- type: python3 -m pip install python-docx (in some cases this should be 'py -m pip install python-docx')
 5. use pip to install openpyxl
    -- make sure you are still online
-   -- type: pip install openpyxl (in some cases this should be 'py -m pip install openpyxl')
+   -- type: python3 -m pip install openpyxl (in some cases this should be 'py -m pip install openpyxl')
 
 
 Installation on Ubuntu/Linux (includes WSL -- Windows Subsystem for Linux)
@@ -57,19 +57,11 @@ if git is not already available) and install in your home folder
 
   -- type: sudo apt update
   -- type: sudo apt install python3-pip
-  -- type: sudo pip3 install lxml python-doc openpyxl
+  -- type: python3 -m pip install lxml python-docx openpyxl
 
-3. make jreplace.py executable by the user and add the jreplace folder to your
-   path
+3. test that it works
 
-  -- type: chmod u+x ~/jreplace/jreplace.py
-  -- add to your ~/.basrc the following line:
-     export PATH=$PATH:~/jreplace
-  -- source your ~/.basrc typing: source ~/.bashrc
-
-4. test that you can use jreplace from anywhere 
-
-  -- type: jreplace.py
+  -- type: python3  ~/jreplace.py
 
   and the program should reply giving you usage hints (which arguments are
   needed).
@@ -89,7 +81,7 @@ files are, and try generating documents with the attached test files
    cd jreplace
 
 Now test the software typing:
-jreplace.py proyectos.xlsx  clausula.docx  4
+python3 jreplace.py proyectos.xlsx  clausula.docx  4
 
 This should replace the keywords present in the template clausula
 with the content of the cells under the same header in the 4th row
@@ -97,7 +89,7 @@ of the data  base proyectos.xlsx, creating anew document clausula_0004.docx
 
 Try generating multiple documents at once, for example
 
-jreplace.py proyectos.xlsx clausula.docx 5 2 7 14
+python3 jreplace.py proyectos.xlsx clausula.docx 5 2 7 14
 
 
 Carlos Allende Prieto, October 2016
@@ -105,4 +97,5 @@ Carlos Allende Prieto, July 2018
 Jeimy Guarin Poveda, November 2018
 Carlos Allende Prieto, June 2020 -- updated to python3
 Carlos Allende Prieto, March 2023 -- added instructions for a linux install
+Carlos, Jan 2024 -- updated instructions to use python3 -m pip instead of pip3
 
