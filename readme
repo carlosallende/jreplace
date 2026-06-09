@@ -57,7 +57,7 @@ if git is not already available) and install in your home folder
 
   -- type: sudo apt update
   -- type: sudo apt install python3-pip
-  -- type: python3 -m pip install lxml python-docx openpyxl
+  -- type: python3 -m pip install openpyxl python-docx
 
 3. test that it works
 
