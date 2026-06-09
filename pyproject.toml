@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jreplace"
+version = "1.0.0"
+description = "Replace keywords in Word documents using Excel data"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Carlos Allende Prieto", email = "resultaquesi@gmail.com"}
+]
+keywords = ["word", "docx", "excel", "xlsx", "replace", "template"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Office/Business",
+]
+dependencies = [
+    "openpyxl>=3.0",
+    "python-docx>=0.8.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/carlosallende/jreplace"
+Repository = "https://github.com/carlosallende/jreplace.git"
+Issues = "https://github.com/carlosallende/jreplace/issues"
+
+[project.scripts]
+jreplace = "jreplace:main"
+
+[tool.setuptools]
+packages = ["jreplace"]
